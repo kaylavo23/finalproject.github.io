@@ -1,0 +1,253 @@
+/* Kayla Vo */
+/* styles.css */
+
+/* =====================================================
+   Global Styles
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  background-color: #fff5f7;
+}
+
+/* =====================================================
+   Background Image with Transparency
+   ===================================================== */
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* =====================================================
+   Color Scheme — Pink & Rose
+   ===================================================== */
+:root {
+  --primary:  #b5446e;   /* deep rose       */
+  --accent:   #e88fab;   /* soft pink       */
+  --light:    #fde8ef;   /* blush tint      */
+  --muted:    #9e6b7a;   /* dusty mauve     */
+  --border:   #f0c2d0;
+  --white:    #ffffff;
+}
+
+/* =====================================================
+   Header
+   ===================================================== */
+header {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 30px 35px;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 4px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+header hr {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.35);
+  margin: 10px 0 12px;
+}
+
+header p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0;
+}
+
+header a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+header a:hover,
+header a:focus {
+  color: var(--white);
+  border-bottom-color: var(--white);
+  outline: none;
+}
+
+/* Profile photo inside header */
+.header-photo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+  background-color: var(--accent);
+}
+
+.header-text {
+  flex: 1;
+}
+
+/* =====================================================
+   Main Content Area
+   ===================================================== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* =====================================================
+   Sections
+   ===================================================== */
+section {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  padding: 24px 28px;
+  transition: box-shadow 0.2s;
+}
+
+section:hover {
+  box-shadow: 0 4px 18px rgba(181, 68, 110, 0.10);
+}
+
+/* =====================================================
+   Headings
+   ===================================================== */
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--light);
+}
+
+h3 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 18px 0 8px;
+}
+
+/* =====================================================
+   Paragraphs
+   ===================================================== */
+p {
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   Lists
+   ===================================================== */
+ul,
+ol {
+  padding-left: 1.4rem;
+  margin-bottom: 8px;
+}
+
+li {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 6px;
+  line-height: 1.55;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+ul li::marker {
+  color: var(--accent);
+}
+
+ol li::marker {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* =====================================================
+   Links (outside header)
+   ===================================================== */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+a:hover,
+a:focus {
+  color: var(--muted);
+  border-bottom-color: var(--muted);
+  outline: none;
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+footer {
+  background-color: var(--primary);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 18px 20px;
+  border-radius: 0 0 6px 6px;
+  margin-top: 4px;
+  font-size: 0.82rem;
+}
+
+/* =====================================================
+   Print Styles
+   ===================================================== */
+@media print {
+  body:before {
+    display: none;
+  }
+
+  header,
+  footer {
+    background-color: #b5446e;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  section {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

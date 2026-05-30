@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(255, 180, 208);
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+p {
+  color: rgb(0, 151, 197)
+  ;
+  font-size: 18px;
+}
+img {
+  max-width: 300px;
+  display: block;
+  margin: auto;
+  border: 5px solid rgb(0, 221, 237);
+}
+ul {
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+}
